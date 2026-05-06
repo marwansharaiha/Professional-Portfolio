@@ -45,9 +45,11 @@ export default function Home() {
               variants={staggerContainer}
               className="max-w-3xl"
             >
-              <motion.div variants={fadeInUp} className="flex items-center gap-2 text-accent font-medium mb-6">
+              <motion.div variants={fadeInUp} className="flex items-center gap-3 text-accent font-medium mb-6">
                 <span className="h-px w-8 bg-accent block"></span>
                 <span>Geneva, Switzerland</span>
+                <span className="text-muted-foreground/60">·</span>
+                <span>Amman, Jordan</span>
               </motion.div>
               <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6">
                 Marwan Sharaiha
@@ -349,10 +351,10 @@ export default function Home() {
                 Based in Geneva. Operating globally. Let's discuss your next big objective.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-                <a href="mailto:mgsharaiha@gmail.com" className="flex items-center gap-3 text-lg hover:text-accent transition-colors" data-testid="link-email">
+                <span className="flex items-center gap-3 text-lg select-all cursor-text" data-testid="text-email">
                   <Mail className="w-6 h-6" />
-                  mgsharaiha@gmail.com
-                </a>
+                  <span>mgsharaiha</span><span className="mx-0.5">[at]</span><span>gmail.com</span>
+                </span>
                 <a href="tel:+41783293359" className="flex items-center gap-3 text-lg hover:text-accent transition-colors" data-testid="link-phone">
                   <Phone className="w-6 h-6" />
                   +41 783293359

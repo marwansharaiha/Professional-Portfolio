@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, ExternalLink, ArrowRight, CheckCircle2, ChevronRight, Linkedin, BarChart3 } from "lucide-react";
-import { SiMeta, SiGoogle, SiWordpress } from "react-icons/si";
+import { SiMeta, SiGoogle, SiWordpress, SiHubspot, SiPython } from "react-icons/si";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const fadeInUp = {
@@ -188,8 +188,32 @@ export default function Home() {
                     <span className="font-medium">Google Cloud</span>
                   </div>
                   <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-[#15A847] rounded-md flex items-center justify-center text-white text-xs font-bold">A</div>
+                    <span className="font-medium">Google AdSense</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <SiGoogle className="w-6 h-6 text-green-600" />
+                    <span className="font-medium">Google Mktg Platform</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <SiHubspot className="w-6 h-6 text-[#FF7A59]" />
+                    <span className="font-medium">HubSpot</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <SiGoogle className="w-6 h-6 text-sky-500" />
+                    <span className="font-medium">Search Console</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-[#008373] rounded-md flex items-center justify-center text-white text-xs font-bold">B</div>
+                    <span className="font-medium">Bing Search Console</span>
+                  </div>
+                  <div className="flex items-center gap-3">
                     <SiWordpress className="w-6 h-6 text-slate-700 dark:text-slate-300" />
                     <span className="font-medium">WordPress</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <SiPython className="w-6 h-6 text-[#3776AB]" />
+                    <span className="font-medium">Python (Basic)</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-purple-600 rounded-md flex items-center justify-center text-white text-xs font-bold">M</div>

@@ -1,45 +1,52 @@
-# [Project name]
+# Marwan Sharaiha — Personal Portfolio
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A professional single-page portfolio website for Marwan Sharaiha, senior digital marketing strategist.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/portfolio run dev` — run the portfolio site (reads PORT env)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: React + Vite, Tailwind CSS v4, shadcn/ui, Framer Motion
+- Routing: Wouter
+- Icons: lucide-react, react-icons/si
+- No backend — fully static, all data is hardcoded in components
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/portfolio/src/pages/Home.tsx` — main single-page portfolio (all sections)
+- `artifacts/portfolio/src/index.css` — full theme (Playfair Display + Plus Jakarta Sans, navy/amber palette)
+- `artifacts/portfolio/src/App.tsx` — root app with ThemeProvider and routing
+- `artifacts/portfolio/src/components/ThemeToggle.tsx` — dark/light mode toggle
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Presentation-first, no backend: all content is static — no API, no database
+- Single-page app with smooth-scroll navigation and section anchors
+- Framer Motion used for scroll-triggered section reveals and staggered entrance animations
+- Dark mode implemented via class toggle on `document.documentElement` with localStorage persistence
+- react-icons/si used for brand logos (Meta, Google, WordPress); lucide-react for all other icons
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+A professional personal website showcasing Marwan's 20+ year career in digital marketing and media strategy across the MENA region and Europe. Sections: Hero, Impact & Scale, Career Trajectory (timeline), Core Expertise & Tech Stack, Education & Certifications, Personal Ventures, Beyond Work, and Contact.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- No emojis in the UI
+- Professional and authoritative tone
+- Dark mode toggle included
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- react-icons/si v5 renamed some icons — `SiLinkedin` and `SiGoogleanalytics` no longer exist; use lucide-react alternatives (`Linkedin`, `BarChart3`)
+- Google Fonts @import must be the FIRST line of index.css, before @import "tailwindcss"
 
 ## Pointers
 
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+- See the `pnpm-workspace` skill for workspace structure and TypeScript setup
+- See the `react-vite` skill for frontend conventions

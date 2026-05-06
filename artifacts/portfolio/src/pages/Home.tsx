@@ -487,7 +487,7 @@ export default function Home() {
                 {/* Video embed */}
                 <div className="relative bg-foreground/5 aspect-video md:aspect-auto md:min-h-[320px]">
                   <iframe
-                    src="https://www.youtube.com/embed/vz8cE_oTAHI"
+                    src="https://www.youtube.com/embed/iddFLn1dGg4"
                     title="LG Social Crane Campaign"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

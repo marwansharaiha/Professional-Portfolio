@@ -471,16 +471,60 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Personal Ventures ── */}
+        {/* ── Campaign Spotlight ── */}
         <section id="projects" className="py-24 px-6">
           <div className="max-w-6xl mx-auto">
-            <SectionHeading>Personal Ventures</SectionHeading>
+            <SectionHeading>Campaign Spotlight</SectionHeading>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={fadeUp}
+              className="bg-card border border-card-border rounded-2xl overflow-hidden shadow-sm"
+              data-testid="card-campaign-lg"
+            >
+              <div className="grid md:grid-cols-2 gap-0">
+                {/* Video embed */}
+                <div className="relative bg-foreground/5 aspect-video md:aspect-auto md:min-h-[320px]">
+                  <iframe
+                    src="https://www.youtube.com/embed/vz8cE_oTAHI"
+                    title="LG Social Crane Campaign"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                    data-testid="iframe-lg-crane"
+                  />
+                </div>
+
+                {/* Description */}
+                <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <div className="flex items-center gap-3 mb-4">
+                    <SiGoogle className="w-5 h-5 opacity-40" />
+                    <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Featured Campaign · 2012–2013</span>
+                  </div>
+                  <h4 className="text-2xl font-serif font-bold mb-2">LG Social Crane</h4>
+                  <p className="text-accent font-semibold text-sm mb-4">Executed at PRODIGI Corp for LG Electronics</p>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    A pioneering social media activation that connected online engagement with a real-world physical stunt.
+                    Social media activity drove a live crane experience, creating a viral feedback loop between digital
+                    audiences and an offline spectacle — well ahead of its time in the MENA market.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Experiential Marketing", "Social Media Activation", "LG Electronics", "Viral Campaign"].map((tag) => (
+                      <span key={tag} className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-semibold">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Personal Ventures row */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={stagger}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid md:grid-cols-2 gap-8 mt-12"
             >
               {[
                 {
@@ -497,13 +541,6 @@ export default function Home() {
                   href: null,
                   testId: null
                 },
-                {
-                  title: "PICTOMED.org",
-                  desc: "IT volunteer for a visual doctor-patient communication tool, bridging language barriers in healthcare.",
-                  year: "2026–present",
-                  href: null,
-                  testId: null
-                }
               ].map((proj, i) => (
                 <motion.div
                   key={i}
@@ -543,7 +580,9 @@ export default function Home() {
         <section id="personal" className="py-24 px-6 bg-secondary/10">
           <div className="max-w-6xl mx-auto">
             <SectionHeading>Beyond Work</SectionHeading>
-            <div className="grid md:grid-cols-2 gap-8">
+
+            {/* Top row: Marathon + Volunteer */}
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
               <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -600,6 +639,57 @@ export default function Home() {
                 </motion.ul>
               </motion.div>
             </div>
+
+            {/* PICTOMED card — full width */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={fadeUp}
+              whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.08)" }}
+              transition={{ duration: 0.25 }}
+              className="bg-card rounded-2xl border border-card-border overflow-hidden"
+              data-testid="card-pictomed"
+            >
+              <div className="grid md:grid-cols-3 gap-0">
+                {/* Accent sidebar */}
+                <div className="hidden md:flex flex-col items-center justify-center bg-accent/8 border-r border-card-border p-10">
+                  <div className="w-16 h-16 rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
+                    <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z" />
+                    </svg>
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-accent text-center">IT Volunteer</span>
+                  <span className="text-xs text-muted-foreground mt-1">2026 – Present</span>
+                </div>
+
+                {/* Content */}
+                <div className="md:col-span-2 p-8 md:p-10">
+                  <div className="flex items-start justify-between flex-wrap gap-4 mb-3">
+                    <div>
+                      <h4 className="text-2xl font-bold">PICTOMED.org</h4>
+                      <p className="text-accent font-semibold text-sm mt-1">Visual Doctor–Patient Communication Tool</p>
+                    </div>
+                    <span className="md:hidden text-xs font-semibold uppercase tracking-widest text-accent bg-accent/10 px-3 py-1 rounded-full">
+                      IT Volunteer · 2026–Present
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Contributing as an IT volunteer to PICTOMED's web-based, non-verbal visual communication platform
+                    designed to overcome language barriers in doctor–patient interactions. The tool enables healthcare
+                    providers to communicate effectively with patients regardless of shared language — a meaningful
+                    application of technology to human care.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Healthcare Tech", "Language Accessibility", "Web Volunteer", "Social Impact"].map((tag) => (
+                      <span key={tag} className="px-3 py-1 bg-secondary rounded-full text-xs font-medium text-secondary-foreground">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
